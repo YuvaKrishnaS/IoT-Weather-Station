@@ -1,0 +1,12 @@
+import display_control
+#pip import pyserial
+import serial  
+import time
+
+arduino = serial.Serial("COM5", 115200, timeout=.1)
+time.sleep(0.5)
+
+for i in range(8):
+
+    display_control.sendAnimToDisplay(arduino,i)
+    time.sleep(2)
